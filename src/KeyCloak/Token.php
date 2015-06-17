@@ -125,7 +125,7 @@ class Token {
 			return FALSE;
 		}
 
-		return (array_search($role_name, $app_roles['roles']) ? TRUE : FALSE);
+		return (is_int(array_search($role_name, $app_roles['roles'])) ? TRUE : FALSE);
 	}
 
 	/**
@@ -140,7 +140,7 @@ class Token {
 	 * @return {boolean} `true` if this token has the specified role, otherwise `false`.
 	 */
 	public function has_realm_role ($role_name) {
-		return (array_search($role_name, $this->payload['realm_access']['roles']) ? TRUE : FALSE);
+		return (is_int(array_search($role_name, $this->payload['realm_access']['roles'])) ? TRUE : FALSE);
 	}
 }
 
