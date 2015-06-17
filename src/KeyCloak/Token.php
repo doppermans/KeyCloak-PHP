@@ -119,7 +119,7 @@ class Token {
 	 * @return {boolean} `true` if this token has the specified role, otherwise `false`.
 	 */
 	public function has_application_role ($app_name, $role_name) {
-		$app_roles = $this->payload['resource_access'][appName];
+		$app_roles = $this->payload['resource_access'][$app_name];
 
 		if (!$app_roles) {
 			return FALSE;
